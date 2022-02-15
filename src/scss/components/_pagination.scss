@@ -1,0 +1,20 @@
+.pagination {
+  @include list-null;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  a{
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid grey;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: grey;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+body{
+   @include full-height-content();
+   font-family: $font-family-base;
+   font-size: $font-size;
+}

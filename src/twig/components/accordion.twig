@@ -1,0 +1,29 @@
+{% set items = ['accHome', 'accProfile', 'accContacts'] %}
+
+<div class="accordion" id="accordionExample">
+    {% for item in items %}
+        <div class="accordion-item">
+            <div id="heading{{ item }}">
+                <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#{{ item }}"
+                        aria-expanded="true"
+                        aria-controls="{{ item }}"
+                >{{ item }}</button>
+            </div>
+
+            <div
+                    id="{{ item }}"
+                    class="accordion-collapse collapse {{ loop.index == 1 ? 'show' : '' }}"
+                    aria-labelledby="heading{{ item }}"
+                    data-bs-parent="#accordionExample"
+            >
+                <div class="accordion-body">
+                    Content
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

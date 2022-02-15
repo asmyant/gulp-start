@@ -1,0 +1,61 @@
+{#- Главная страница   -#}
+{% extends 'templates/base.twig' %}
+
+{% block content %}
+    <div class="container">
+        <h2>Количество</h2>
+        {% include 'components/quantity.twig' %}
+        {% include 'components/quantity.twig' %}
+        <hr>
+        <h2>Постраничная навигация</h2>
+        {% include 'components/pagination.twig' %}
+        <hr>
+        <h2>Хлебные крошки</h2>
+        {% include 'components/breadcrumb.twig' with {crumbs: [
+            { name: 'Записи', link: 'posts' },
+            { name: 'Еще страница', link: 'page' },
+        ]} %}
+        <hr>
+        <h2>Иконки svg4everybody</h2>
+        {% include 'components/svg.twig' with {id: 'check', width: 20, height: 20} %}
+        <hr>
+        <h2>Табы (Bootstrap 5)</h2>
+        {% include 'components/tab.twig' %}
+        <hr>
+        <h2>Модалки (Bootstrap 5)</h2>
+        {% include 'modals/modal.twig' %}
+        <hr>
+        <h2>Аккардион (Bootstrap 5)</h2>
+        {% include 'components/accordion.twig' %}
+        <hr>
+        <h2>Спинеры (Bootstrap 5)</h2>
+        {% include 'components/spinner.twig' %}
+        <hr>
+        <h2>Инпут</h2>
+        <label for="input">Name</label>
+        <input type="text" class="form-input" id="input">
+        <hr>
+        <h2>Чекбоксы</h2>
+        <div class="form-checkbox">
+            <input type="radio" class="form-checkbox__input" id="radio" name="radio">
+            <label for="radio" class="form-checkbox__label">
+                Аккардион (Bootstrap 5)
+            </label>
+        </div>
+        <br>
+        <div class="form-checkbox">
+            <input type="radio" class="form-checkbox__input" id="radio1" name="radio">
+            <label for="radio1" class="form-checkbox__label">
+                Аккардион (Bootstrap 5)
+            </label>
+        </div>
+        <hr>
+        <h2>Радио</h2>
+        <div class="form-checkbox">
+            <input type="checkbox" class="form-checkbox__input" id="checkbox">
+            <label for="checkbox" class="form-checkbox__label">
+                Аккардион (Bootstrap 5)
+            </label>
+        </div>
+    </div>
+{% endblock %}

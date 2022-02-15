@@ -1,0 +1,18 @@
+@use "variables";
+@use "sass:math";
+
+// Путь до файла с картинками
+@function image($url) {
+   @return url(variables.$image-directory + '/' + #{$url})
+}
+
+// Получения цвета из мапа
+@function color($name) {
+   @return map-get(variables.$theme-colors, $name)
+}
+
+// Матемамтика
+@function strip-unit($value) {
+  $res1: $value * 0 + 1;
+  @return math.div($value, $res1);
+}

@@ -1,0 +1,8 @@
+.breadcrumb {
+  @include list-null;
+  display: flex;
+
+  a {
+    margin-right: 10px;
+  }
+}

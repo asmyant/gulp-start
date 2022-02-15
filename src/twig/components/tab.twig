@@ -1,0 +1,29 @@
+{% set items = ['Home', 'Profile', 'Contact'] %}
+
+<ul class="nav list-null" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        {% for item in items %}
+            <button
+                    class="nav-link {{ loop.index == 1 ? 'active' : '' }}"
+                    id="{{ item }}-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#{{ item }}"
+                    type="button"
+                    role="tab"
+                    aria-controls="{{ item }}"
+                    aria-selected="true"
+            >{{ item }}</button>
+        {% endfor %}
+    </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+    {% for item in items %}
+        <div
+                class="tab-pane fade {{ loop.index == 1 ? 'show active' : '' }}"
+                id="{{ item }}"
+                role="tabpanel"
+                aria-labelledby="{{ item }}-tab"
+        >{{ item }}</div>
+    {% endfor %}
+</div>

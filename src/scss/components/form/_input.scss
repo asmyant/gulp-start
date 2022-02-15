@@ -1,0 +1,11 @@
+.form-input {
+  width: 100%;
+  border: 1px solid grey;
+  height: 40px;
+  outline: none;
+  padding-left: 15px;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 16px!important;
+  }
+}
