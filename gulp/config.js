@@ -40,7 +40,8 @@ export const config = {
     src: {
       index: src + catalog.styles + "/style.scss",
       vendors: src + catalog.styles + "/vendors/*.scss",
-      vendorsFile: "vendors.css"
+      vendorsFile: "vendors.css",
+      folder: src + catalog.styles,
     },
     dist: dist + "css",
     watch: {

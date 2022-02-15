@@ -12,7 +12,7 @@ export default {
   plugins: [
     new webpack.ProvidePlugin(config.scripts.webpack.plugins),
   ],
-  devtool: 'source-map',
+  devtool: mode === 'production' ? 'source-map' : '',
   mode,
   optimization: {
     splitChunks: {
