@@ -5,8 +5,7 @@ import {dist} from "../config.js";
 const {src} = pkg;
 
 /**
- * Удаление папки dest
+ * Update development folder
  */
-export const updateDist = () => {
-   return src(dist, {read: false, allowEmpty: true}).pipe(clean())
-}
+export const updateDist = () => src(dist, {read: false, allowEmpty: true}).pipe(clean());
+

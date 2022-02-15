@@ -6,17 +6,16 @@ import date from "date-and-time";
 import {config, dist} from "../config.js";
 
 const {src, dest} = pkg;
-const projectFolderName = (config.zip.title || resolve().slice(resolve().lastIndexOf('\\') + 1)) + '-' + date.format(new Date(), 'DD-MM-YYYY') + '.zip';
+const projectFolderName = (config.zip.title || resolve().slice(resolve().lastIndexOf('\\') + 1)) + '-' + date.format(new Date(), 'DD.MM.YYYY') + '.zip';
 
 /**
- * Архивация
+ * Ziping
  */
 export const ziped = (cb) => {
-   console.log(projectFolderName)
-   if(config.zip.enable) {
-      return src(dist + "**/*")
-         .pipe(zip(projectFolderName))
-         .pipe(dest("./"))
-   }
-   cb()
+  if (config.zip.enable) {
+    return src(dist + "**/*")
+        .pipe(zip(projectFolderName))
+        .pipe(dest("./"))
+  }
+  cb();
 }

@@ -4,15 +4,15 @@ import {config, dist} from "../config.js";
 
 const directory = [dist + '**/*'];
 const {src} = pkg;
-
 const {access, folder} = config.deploy.folder;
+const enable = config.deploy.enable;
 
 /**
- * Деплой
+ * Deploy server
  * @returns {*}
  */
 export const deploy = (cb) => {
-  if (config.deploy.enable) {
+  if (enable) {
     const connect = ftp.create({...access});
 
     return src(directory, {base: dist, buffer: false})

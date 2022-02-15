@@ -1,26 +1,19 @@
 {
-  "name": "start-project",
+  "name": "gulp-start-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "gulp",
-    "build": "gulp build --prod"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://asmyan00@bitbucket.org/asmyan00/samurai.git"
+    "build": "gulp build --prod",
+    "init": "npm i & npm run dev"
   },
   "browserslist": [
     "defaults"
   ],
-  "author": "",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/asmyan00/samurai#readme",
+  "author": "Tigran Asmyan",
   "dependencies": {
-    "@fancyapps/ui": "^4.0.7",
-    "@popperjs/core": "^2.10.2",
     "bootstrap": "^5.0.2",
     "jquery": "^3.6.0",
     "svg4everybody": "^2.1.9"

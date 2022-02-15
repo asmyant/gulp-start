@@ -1,4 +1,4 @@
-// Контент на всю высоту экрана
+// Footer bottom
 @mixin full-height-content() {
    min-height: 100vh;
    display: flex;
@@ -10,14 +10,14 @@
    }
 }
 
-// Центровка блока флексом
+// Flex centering
 @mixin flex-center-block() {
    display: flex;
    align-items: center;
    justify-content: center;
 }
 
-// Центровка элемента вертикально и горизонтально с помощью transform
+// Center block transform
 @mixin transform-center-xy() {
    position: absolute;
    left: 50%;
@@ -25,21 +25,22 @@
    transform: translate(-50%, -50%);
 }
 
-// Центровка элемента вертикально с помощью transform
+// Vertical centering block
 @mixin transform-center-x() {
    position: absolute;
    left: 50%;
    transform: translateX(-50%);
 }
 
-// Центровка элемента горизонтально с помощью transform
+// Horizontal centering block
 @mixin transform-center-y() {
    position: absolute;
    top: 50%;
    transform: translateY(-50%);
 }
 
-// Текст резин
+// Fluid text
+// @include fluid-type(320px, 1920px, 10px, 20px);
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
   $u1: unit($min-vw);
   $u2: unit($max-vw);
@@ -59,9 +60,7 @@
   }
 }
 
-// @include fluid-type(320px, 1920px, 10px, 20px);
-
-// Обнуление текста
+// List null styles
 @mixin list-null {
   list-style-type: none;
   padding: 0;

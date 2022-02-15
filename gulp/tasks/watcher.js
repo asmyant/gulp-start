@@ -7,10 +7,10 @@ import {images} from "./images.js";
 import {fonts} from "./fonts.js";
 import {js, jsVendors} from "./javascript.js";
 
-const {watch, done} = pkg;
+const {watch} = pkg;
 
 /**
- * Наблюдатель файлов
+ * Gulp watchers
  */
 export const watcher = (cb) => {
    if (!production) {

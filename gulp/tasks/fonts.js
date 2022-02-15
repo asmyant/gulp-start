@@ -1,13 +1,11 @@
 import pkg from "gulp";
-
 import {config} from "../config.js";
 
 const {src, dest} = pkg;
+const {src: fontSrc, dist: fontDest} = config.fonts;
 
 /**
- * Шрифты
+ * Gulp task fonts
+ * @returns {*}
  */
-export const fonts = () => {
-   return src(config.fonts.src)
-      .pipe(dest(config.fonts.dist))
-}
+export const fonts = () => src(fontSrc).pipe(dest(fontDest));

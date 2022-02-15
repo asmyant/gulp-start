@@ -1,13 +1,10 @@
 import pkg from "gulp";
-
 import {config} from "../config.js";
 
 const {src, dest} = pkg;
+const {src: imageSrc, dist: imageDest} = config.images;
 
 /**
- * Картинки
+ * Images gulp task
  */
-export const images = () => {
-   return src(config.images.src)
-      .pipe(dest(config.images.dist))
-}
+export const images = () => src(imageSrc).pipe(dest(imageDest));

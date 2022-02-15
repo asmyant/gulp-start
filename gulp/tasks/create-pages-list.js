@@ -1,55 +1,23 @@
 import glob from "glob";
 import * as fs from "fs";
 import {basename} from "path";
-
 import {config, dist} from "../config.js";
 
 const file = dist + config.html.tasks.pagesList.fileName;
+const create = config.html.tasks.pagesList.create;
+const pages = config.html.pages;
 
 /**
- * Шабон стрницы
+ * Page template
  */
-const html = (list) => {
-  return `<!doctype html>
-<html lang="en">
-<head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Список страниц</title>
-   <style>
-      .container {
-         max-width: 1200px;
-         margin: 0 auto;
-         font-size: 18px;
-         font-family: 'Arial', sans-serif;
-         line-height: 100%;
-      }
-      
-      a {
-         color: #0d6efd;
-         display: block;
-         margin-bottom: 15px;
-      }
-   </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Список страниц</h1>
-        <ol>
-            ${list}
-        </ol>
-   </div>
-</body>
-</html>
-`
-}
+const html = (list) => `<div style="font-family: 'Arial', sans-serif; font-size: 18px"><h1>Pages list</h1><ol>${list}</ol></div>`;
 
 /**
- * Создание файла со список страниц
+ * Create ol list node task
  */
 export const createPagesList = (cb) => {
-  if (config.html.tasks.pagesList.create) {
-    return glob(config.html.pages, (err, data) => {
+  if (create) {
+    return glob(pages, (err, data) => {
       let lis = "";
 
       data.forEach(file => {

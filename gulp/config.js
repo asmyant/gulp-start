@@ -1,12 +1,11 @@
 /**
- * Папки для разработки
- * @type {string}
+ * Main folders
  */
 export const dist = "./dist/"; // Production
 export const src = "./src/"; // Development
 
 /**
- * Название папок
+ * Folder naming
  */
 const catalog = {
   styles: "scss",
@@ -17,7 +16,7 @@ const catalog = {
 }
 
 /**
- * Главный конфиг для галпа
+ * Tasks main config
  */
 export const config = {
   deploy: {
@@ -43,11 +42,11 @@ export const config = {
       vendors: src + catalog.styles + "/vendors/*.scss",
       vendorsFile: "vendors.css"
     },
+    dist: dist + "css",
     watch: {
       index: src + catalog.styles + "/**/*",
       vendors: src + catalog.styles + "/vendors/**/*"
     },
-    dist: dist + "css",
     tasks: {
       clean: {
         level: 2,
@@ -71,6 +70,12 @@ export const config = {
       index: src + catalog.scripts + "/**/*",
       vendors: src + catalog.scripts + "/vendors/*"
     },
+    tasks: {
+      sourceMap: {
+        dist: "./",
+        create: true,
+      },
+    },
     webpack: {
       fileName: {
         index: "index.js",
@@ -85,11 +90,11 @@ export const config = {
   },
   html: {
     pages: src + catalog.html + "/*.twig",
+    dist: dist,
+    versionFiles: true,
     pagesFolder: src + catalog.html + "/*.twig",
     watch: src + catalog.html + "/**/*.twig",
     minify: false,
-    versionFiles: true,
-    dist: dist,
     tasks: {
       beautify: {
         beautify: {
@@ -109,11 +114,11 @@ export const config = {
   },
   fonts: {
     src: src + catalog.fonts + "/**/*",
-    watch: src + catalog.fonts + "/**/*",
-    dist: dist + catalog.fonts
+    dist: dist + catalog.fonts,
+    watch: src + catalog.fonts + "/**/*"
   },
   zip: {
-    title: undefined,
+    title: 'Start',
     enable: true
-  }
-}
+  },
+};
